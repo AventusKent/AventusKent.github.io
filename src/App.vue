@@ -1,5 +1,18 @@
-<script setup></script>
+<script setup>
+import Side from '@/components/Side.vue';
+import Content from '@/components/Content.vue';
+</script>
 
 <template>
-    <div>111</div>
+    <div class="container">
+        <Side />
+        <Content />
+    </div>
 </template>
+
+<style>
+.container {
+    display: flex;
+    height: 100%;
+}
+</style>

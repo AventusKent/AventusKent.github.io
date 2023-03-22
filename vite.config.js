@@ -1,7 +1,19 @@
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import * as path from 'path';
+import Markdown from 'vite-plugin-md';
 
 export default defineConfig({
-  plugins: [vue()],
-  base: "/",
+    plugins: [
+        vue({
+            include: [/\.vue$/, /\.md$/],
+        }),
+        Markdown({ builders: [] }),
+    ],
+    base: '/',
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, 'src'),
+        },
+    },
 });
