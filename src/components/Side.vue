@@ -1,20 +1,27 @@
 <script setup>
 import { ref } from 'vue';
 
-const menus = ['博客前言', '项目集合'];
-const key = ref(0);
+const menus = [
+    { name: '博客前言', key: 'introduction' },
+    { name: '项目集合', key: 'projects' },
+];
+const key = ref('introduction');
+
+const click = item => {
+    key.value = item.key;
+};
 </script>
 
 <template>
     <div class="aside">
-        <header class="head"></header>
+        <header class="head" />
         <figure class="name">Kent</figure>
 
         <nav class="nav">
-            <div v-for="(item, index) in menus" :key="index" @click="() => (key = index)" :class="key === index && 'active'">
-                <span>{{ item }}</span>
+            <div v-for="item in menus" :key="item.key" @click="click(item)" :class="key === item.key && 'active'">
+                <span>{{ item.name }}</span>
                 <svg
-                    v-if="key === index"
+                    v-if="key === item.key"
                     t="1679479303015"
                     class="icon"
                     viewBox="0 0 1024 1024"
