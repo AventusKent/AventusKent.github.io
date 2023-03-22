@@ -1,14 +1,21 @@
 <script setup>
 import { ref } from 'vue';
+import router from '../router';
 
 const menus = [
     { name: '博客前言', key: 'introduction' },
-    { name: '项目集合', key: 'projects' },
+    { name: '项目集合', key: 'project' },
 ];
+
 const key = ref('introduction');
+if (sessionStorage.getItem('key')) {
+    key.value = sessionStorage.getItem('key');
+}
 
 const click = item => {
     key.value = item.key;
+    sessionStorage.setItem('key', item.key);
+    router.push({ path: `/${item.key}` });
 };
 </script>
 

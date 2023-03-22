@@ -1,11 +1,11 @@
 <script setup>
-import md from '../mds/introduction.md';
+import { RouterView } from 'vue-router';
 </script>
 
 <template>
     <div class="content">
         <article class="markdown-body">
-            <md />
+            <RouterView />
         </article>
     </div>
 </template>
