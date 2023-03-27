@@ -4,7 +4,7 @@ import router from '../router';
 
 const menus = [
     { name: '博客前言', key: 'introduction' },
-    { name: '项目集合', key: 'project' },
+    { name: 'KTR Editor', key: 'ktr' },
 ];
 
 const key = ref('introduction');

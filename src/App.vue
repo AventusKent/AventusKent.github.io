@@ -14,5 +14,6 @@ import Content from '@/components/Content.vue';
 .container {
     display: flex;
     height: 100%;
+    overflow: hidden;
 }
 </style>

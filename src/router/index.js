@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Introduction from '@/mds/introduction.md';
-import Project from '@/components/Project.vue';
+import KTR from '@/mds/ktr.md';
 
 const mds = import.meta.glob('../mds/*.md', { eager: true });
 console.log(mds);
@@ -17,8 +17,8 @@ const router = createRouter({
             component: Introduction,
         },
         {
-            path: '/project',
-            component: Project,
+            path: '/ktr',
+            component: KTR,
         },
     ],
 });

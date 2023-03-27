@@ -15,5 +15,6 @@ import { RouterView } from 'vue-router';
     flex: 1;
     background: rgba(196, 196, 196, 0.8);
     padding: 32px;
+    overflow: auto;
 }
 </style>
